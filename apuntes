@@ -1,0 +1,65 @@
+-- DOCKER --
+
+ --> IMAGEN: se usan para ejecutar los contenedores, es el paso uno para 
+	     su inicialización 
+
+	TODO CONTENEDOR PARTE DE UNA IMAGEN 
+		-- docker images: ej - odoo 15, odoo 16 etc.
+		-- docker pull: para traer esas imagenes y descargarlas 
+		-- docker rmi + nombre: para eliminar una imagen 
+		   (docker rmi + 3 primeros digitos de ID)
+		   (docker rm $(docker ps -aq : borra varios contenedores) 
+
+	Se pueden descargar desde DOCKER HUB 
+
+ --> ¿Cómo ejecutamos al contenedor? (hay dos opciones)
+	
+	OPCION UNO: docker run -it + nombre -- ejecuta en primer plano
+	OPCION DOS: docker run -d + nombre -- ejecuta en segundo plano 
+
+		-- docker ps -a: para ver cuáles contenedores se están 
+				 ejecutando 
+
+ --> Podemos cambiarle el nombre a los contenedores
+		-- docker run -it --name + nombreNuevo + nombre img:
+		   básicamente se le cambia cuando lo estamos por ejecutar 
+
+ --> INICIALIZAR CONTENEDOR
+		-- docker start + nombre 
+
+----------------------------------------------------------------------------------
+
+-- KAHOOT -- 
+
+ --> ¿QUÉ TIENE? : ANÁLISIS FUNCIONAL 
+
+	-- Cuestionarios: usuarios pueden crearlos con preguntas multiple choice, v o f, etc.
+	-- Preguntas: cada una de las preguntas, tienen varias opciones, con una o con
+		      varias correctas, puntuación en las respuestas correctas 
+	-- Resultados: resultados finales para cada uno de los jugadores
+	-- Jugadores: permite que varias personas puedan participar en el mismo quiz,
+		      se pueden ver los resultados en tiempo real  
+
+ --> ¿QUÉ PODEMOS HACER CON ESTO EN ODOO?
+
+	-- Con las MULTIPLE CHOICE, en odoo está el módulo survey.question permite estas 
+	   multiple choice, pero tendrìamso que extenderlo para añadir otro tipo de pregunta
+
+	-- PUNTUACIÓN tendríamos que añadir un puntuación en cada respuesta correcta
+
+	-- USUARIOS Y/O JUGADORES, se necesitaria una vista personalizada para ver cómo se
+	   se desempeñarían en tiempo real 
+
+-- ODOO --
+
+ --> ¿QUÉ NOS OFRECE ODOO CON EL MÓDULO DE SURVEY : ENCUESTAS? 
+
+	-- Encuestas: crear encuestas con un conjunto de preguntas, cubre parcialmente la
+	   funcionalidad de "cuestionarios" 
+	-- Preguntas: odoo puede soportar varios tipos de preguntas (multiple chpice, escala,
+	   texto, etc.) Habría que extender las pregunta de tipo v o f
+	-- Respuestas: odoo guarda las respuestas, pero la puntuaciñon no es parte de la 
+	   funcionalidad predeterminada, así que tendríamos que agregar eso 
+	-- Resultados: odoo tiene informes basicos de respuestas de usuarios, pero claramente
+	   necesitamos cambiarlo para que pueda mostrar los resultados con más detalle
+	   (como con tiempo real, por jugador, etc.)
