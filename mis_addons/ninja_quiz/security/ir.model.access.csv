@@ -1,0 +1,4 @@
+access_ninja_quiz,access_ninja_quiz,model_ninja_quiz,base.group_user,1,1,1,1
+access_ninja_question,access_ninja_question,model_ninja_question,base.group_user,1,1,1,1
+access_ninja_answer,access_ninja_answer,model_ninja_answer,base.group_user,1,1,1,1
+
