@@ -14,6 +14,7 @@ class NinjaQuestion(models.Model):
     _description = 'Pregunta del Quiz'
 
     name = fields.Char('Pregunta', required=True)
+    image = fields.Binary(string='Imagen')
     quiz_id = fields.Many2one('ninja.quiz', string='Quiz')
     answer_ids = fields.One2many('ninja.answer', 'question_id', string='Respuestas')
 

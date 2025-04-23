@@ -1,6 +1,6 @@
 <odoo>
 
-    <!-- Vista de formulario para Ninja Quiz -->
+    <!-- Quiz -->
     <record id="view_ninja_quiz_form" model="ir.ui.view">
         <field name="name">ninja.quiz.form</field>
         <field name="model">ninja.quiz</field>
@@ -24,8 +24,6 @@
             </form>
         </field>
     </record>
-
-    <!-- Vista de lista para Ninja Quiz -->
     <record id="view_ninja_quiz_tree" model="ir.ui.view">
         <field name="name">ninja.quiz.tree</field>
         <field name="model">ninja.quiz</field>
@@ -36,22 +34,18 @@
             </tree>
         </field>
     </record>
-
-    <!-- Acción para abrir los quizzes -->
     <record id="action_ninja_quiz" model="ir.actions.act_window">
         <field name="name">Quizzes</field>
         <field name="res_model">ninja.quiz</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- Menú principal de Ninja Quiz -->
     <menuitem id="ninja_quiz_menu" name="Ninja Quiz" sequence="10"/>
     <menuitem id="ninja_quiz_main_menu"
               name="Gestión de Quizzes"
               parent="ninja_quiz_menu"
               action="action_ninja_quiz"/>
 
-    <!-- Vista de formulario para Jugador -->
+    <!-- Jugadores -->
     <record id="view_ninja_player_form" model="ir.ui.view">
         <field name="name">ninja.player.form</field>
         <field name="model">ninja.player</field>
@@ -79,8 +73,6 @@
             </form>
         </field>
     </record>
-
-    <!-- Vista de lista para Jugador -->
     <record id="view_ninja_player_tree" model="ir.ui.view">
         <field name="name">ninja.player.tree</field>
         <field name="model">ninja.player</field>
@@ -92,31 +84,28 @@
             </tree>
         </field>
     </record>
-
-    <!-- Acción para abrir la vista de jugadores -->
     <record id="action_ninja_player" model="ir.actions.act_window">
         <field name="name">Jugadores</field>
         <field name="res_model">ninja.player</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- Menú para Jugadores -->
     <menuitem id="ninja_player_menu"
               name="Participantes"
               parent="ninja_quiz_menu"
               action="action_ninja_player"
               sequence="20"/>
 
-    <!-- Vista de formulario para Pregunta -->
+    <!-- Preguntas -->
     <record id="view_ninja_question_form" model="ir.ui.view">
         <field name="name">ninja.question.form</field>
         <field name="model">ninja.question</field>
         <field name="arch" type="xml">
-            <form string="Pregunta del Quiz">
+            <form string="Pregunta">
                 <sheet>
                     <group>
                         <field name="name"/>
                         <field name="quiz_id"/>
+			<field name="image" widget="image"/>
                     </group>
                     <notebook>
                         <page string="Respuestas">
@@ -133,8 +122,6 @@
             </form>
         </field>
     </record>
-
-    <!-- Vista de lista para Pregunta -->
     <record id="view_ninja_question_tree" model="ir.ui.view">
         <field name="name">ninja.question.tree</field>
         <field name="model">ninja.question</field>
@@ -145,15 +132,11 @@
             </tree>
         </field>
     </record>
-
-    <!-- Acción para abrir las preguntas -->
     <record id="action_ninja_question" model="ir.actions.act_window">
         <field name="name">Preguntas</field>
         <field name="res_model">ninja.question</field>
         <field name="view_mode">tree,form</field>
     </record>
-
-    <!-- Menú para Preguntas -->
     <menuitem id="ninja_question_menu"
               name="Gestión de Preguntas"
               parent="ninja_quiz_menu"
