@@ -3,7 +3,7 @@ from odoo import models, fields
 
 class NinjaQuiz(models.Model):
     _name = 'ninja.quiz'
-    _description = 'Ninja Quiz'
+    _description = 'Cuestionario estilo kahoot'
 
     name = fields.Char('Nombre del Quiz', required=True)
     description = fields.Text('Descripción del Quiz')
@@ -24,4 +24,5 @@ class NinjaAnswer(models.Model):
     name = fields.Char('Respuesta', required=True)
     question_id = fields.Many2one('ninja.question', string='Pregunta')
     is_correct = fields.Boolean('¡Es correcta!', default=False)
+    points = fields.Integer(string="Puntos", default=0)
 

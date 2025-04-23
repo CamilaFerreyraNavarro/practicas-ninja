@@ -1,4 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_ninja_quiz,ninja.quiz,model_ninja_quiz,,1,1,1,1
-access_ninja_question,ninja.question,model_ninja_question,,1,1,1,1
-access_ninja_answer,ninja.answer,model_ninja_answer,,1,1,1,1
